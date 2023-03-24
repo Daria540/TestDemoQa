@@ -19,6 +19,7 @@ public class SelenideTest {
         $("#wiki-tab").click();
         $("#wiki-pages-filter").setValue("SoftAssertions");
         $(byText("SoftAssertions")).click();
-        $(".markdown-body").shouldHave(text("Using JUnit5 extend test class:"));
+        $(".markdown-body").shouldHave(text("Using JUnit5 extend test class:"),
+        text("@Test void test() { Configuration.assertionMode = SOFT; open(\"page.html\");"));
     }
 }
