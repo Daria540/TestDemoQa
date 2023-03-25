@@ -3,11 +3,6 @@ package example.org;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -17,17 +12,19 @@ public class SelenideTest {
 
     @Test
     void testSelenide() {
-            String Junit5Code = "@ExtendWith({SoftAssertsExtension.class})\n"
-                    +"class Tests {\n"
-                    +"@Test\n"
-                    +" void test() {\n"
-                    +"Configuration.assertionMode = SOFT;\n"
-                    +"open(\"page.html\");\n"
-                    +"\n"
-                    +"$(\"#first\").should(visible).click();\n"
-                    +" $(\"#second\").should(visible).click();\n"
-                    +"}\n" +
-                    "}";
+        String Junit5Code = """
+                 @ExtendWith({SoftAssertsExtension.class})
+                class Tests {
+                    @Test
+                    void test() {
+                        Configuration.assertionMode = SOFT;
+                        open("page.html");
+
+                        $("#first").should(visible).click();
+                        $("#second").should(visible).click();
+                    }
+                }
+                """;
 
         Configuration.browserSize = "1920x1080";
         open("https://github.com/");
