@@ -1,6 +1,5 @@
 package example.org;
 
-
 public class DataTraining {
     public static void main(String[] args) {
         int a = 20;
