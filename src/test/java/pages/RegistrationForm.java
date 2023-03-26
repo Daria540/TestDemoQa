@@ -15,7 +15,7 @@ public class RegistrationForm {
             mobileInput = $("#userNumber");
 
     public RegistrationForm openPage() {
-        open("https://demoqa.com/automation-practice-form");
+        open("/automation-practice-form");
         return this;
     }
 
