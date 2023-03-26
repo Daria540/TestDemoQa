@@ -1,13 +1,16 @@
 package core;
 
 
-import static com.codeborne.selenide.Selenide.open;
+import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.BeforeAll;
+
 
 public class TestBase {
 
-
-    public static void openPage() {
-        open("https://demoqa.com/automation-practice-form");
+    @BeforeAll
+    static void beforeAll() {
+        Configuration.baseUrl = "https://demoqa.com&quot";
+        Configuration.browserSize = "1920x1080";
     }
 
 }

@@ -5,15 +5,15 @@ import org.junit.jupiter.api.Test;
 import pages.*;
 import pages.components.*;
 
-public class PageObjectPracticeFormTest {
+public class PageObjectPracticeFormTest extends TestBase {
 
     RegistrationForm registrationForm = new RegistrationForm();
     CheckResultForm checkResultForm = new CheckResultForm();
 
     @Test
     void firstTest() {
-        TestBase.openPage();
-        registrationForm.closeBanner()
+        registrationForm.openPage()
+                .closeBanner()
                 .setFirstName("Tiabaldy")
                 .setLastName("Ivanov")
                 .setEmail("test@gmail.com")
